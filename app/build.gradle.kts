@@ -11,13 +11,14 @@ android {
         applicationId = "dev.vibex.companion"
         minSdk = 26
         targetSdk = 35
-        versionCode = 15
-        versionName = "0.4.3"
+        versionCode = 18
+        versionName = "0.4.5"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("debug")
         }
         debug {
             isMinifyEnabled = false
@@ -36,6 +37,7 @@ dependencies {
     implementation(project(":companion-core"))
     implementation(platform("androidx.compose:compose-bom:2024.10.01"))
     implementation("androidx.activity:activity-compose:1.9.3")
+    implementation("androidx.browser:browser:1.8.0")
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
